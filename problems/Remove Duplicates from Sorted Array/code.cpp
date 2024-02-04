@@ -1,19 +1,15 @@
 class Solution {
 public:
-// Time complexity -> O(N)
-    int removeElement(vector<int>& nums, int val) {
-     int idx = 0;
-    
-     for(int i=0;i<nums.size();i++) 
+    int removeDuplicates(vector<int>& nums) {
+     int p =0;
+     for(int i=1;i<nums.size();i++)
      {
-         if(nums[i] != val)
+         if(nums[i] != nums[p]) // O(N)
          {
-             nums[idx++] = nums[i];
-           
+             nums[++p] = nums[i];
          }
      }
-     return idx;
+     return p+1;
 
     }
-  
 };
